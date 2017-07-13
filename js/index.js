@@ -20,30 +20,24 @@ function touched (){
 
 
 jQuery(function ($) {
-    $.post( "/getTracks", function( data ) {
+    $.post( "/getTracks", function( data,genres ) {
+        tracks = [data.tracks];
+        data = data.tracks;
+        genres = data.genres;
 
         $('#playBtn').click(function(){
                 if(!playing){
-                    console.log("There");
                 playTrack(1);
                 } else {
-                console.log("making it here");
                     audio.pause();
                     playing=false;
                 }
-
-
         });
-        var genres = data.genres;
 
         for (var i in genres) {
-            console.log(genres[i]);
             $('#genres').append(`<li><a>${genres[i]}</a></li>`);
         }
-
-        data = data.tracks;
-        let track = data[1];
-        let tracks = [];
+        console.log(data);
 
 
         function shuffle (array) {
@@ -58,7 +52,7 @@ jQuery(function ($) {
             }
         }
 
-      for (var i in data) {
+      for (i in data) {
          let track = data[i];
          track = track.slice(0,-4);
          let obj = {"track":track,"length":"3:00","file":track};
@@ -93,11 +87,9 @@ jQuery(function ($) {
                     audio.playbackRate = .5;
                     playing = true;
                     npAction.text('Now Playing...');
-                    console.log("play");
                 }).bind('pause', function () {
                     playing = false;
                     npAction.text('Paused...');
-                    console.log("Pase");
                     $('#playBtn').toggleClass("glyphicon-play glyphicon-pause");
                 }).bind('ended', function () {
                     npAction.text('Paused...');
@@ -154,6 +146,7 @@ jQuery(function ($) {
                 playTrack = function (id) {
                     $('#playBtn').toggleClass("glyphicon-play glyphicon-pause");
                     loadTrack(id);
+                    console.log(data[id]);
                     $('.npTitle').text(data[id]);
                     audio.play();
                 };

@@ -16,7 +16,7 @@ function getDirectories (srcpath) {
 }
 
 app.post('/getTracks', function(req, res){
-  const tracks = fs.readdirSync('./audio/');
+  const tracks = fs.readdirSync('./audio/metal/');
   const genres =  getDirectories("./audio/");
   const data = {tracks:tracks,genres:genres};
 
