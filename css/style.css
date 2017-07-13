@@ -1,0 +1,37 @@
+.container{
+	margin-top: 55px;
+}
+.mainwrap{
+	min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh; /* These two lines are counted as one :-)       */
+	display: flex;
+	align-items: center;
+
+}
+#plList > li {
+
+  border-color:grey;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+
+	list-style-type:none;
+	padding:5px;
+}
+#tracks{
+	font-size:48px;
+	margin-left:45%;
+}
+audio{
+	width:100%;
+}
+  .center {
+    width: 100%;
+	text-align: center;
+  }
+.center > li {
+	float: none;
+	display: inline-block;
+}
+  
+
+

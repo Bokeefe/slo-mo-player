@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Slo Mo Player</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script
+  src="http://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="#">SloMo.World</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a><span id="playBtn" class="glyphicon glyphicon-play" aria-hidden="true"></span></a></li>
+                    <li><a><span class="glyphicon glyphicon-backward" aria-hidden="true" id="btnPrev"></span></a></li>
+                    <li><a><span class="glyphicon glyphicon-forward" aria-hidden="true" id="btnNext"></span></a></li> 
+                    <li><a><span class="npTitle"></span></a></li> 
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a>Speed<span class="glyphicon glyphicon-dashboard" aria-hidden="true"> </span></a></li>
+                    <li><a><input onchange=touched(); type="range" id="myRange" min="50" max="95" value="50" width="320"></a></li>
+                    <li><a><span id="display">50</span>%</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- END NAVBAR  -->
+
+  <div class="container">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+            <!-- AUDIO PLAYER -->
+            <div id="audiowrap">
+                <div id="audio0">
+                    <audio preload id="audio1" >Your browser does not support HTML5 Audio!</audio>
+                </div>
+            </div>
+            <!-- PLAYLIST -->
+            <div id="plwrap">
+                <ul id="plList"></ul>
+            </div>
+<!-- GENRE NAVBAR -->
+    
+
+
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <ul class="nav navbar-nav center" id="genres">
+
+        </ul>
+    </nav>
+
+
+    <script src="js/index.js">
+    </script>
+    <script>
+
+    </script>
+
+</body>
+</html>
